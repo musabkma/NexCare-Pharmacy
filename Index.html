@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NexCare Pharmacy — Premium Online Pharmacy</title>
+        <meta name="description" content="NexCare Pharmacy — a modern online pharmacy experience. Shop OTC medicines, supplements, personal care, devices, and prescription-required products." />
+        <meta name="theme-color" content="#0B1220" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="CSS/Styles.css">
+        <link rel="icon" href="favicon/" />
+        <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png" />
+        <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png" />
+    </head>
+    <body>
+        <a class="skip-link" href="#main">Skip to content</a>
+
+        <header class="header" id="header">
+            <div class="header__inner container">
+                <a class="brand" href="#/" aria-label="NexCare Pharmacy home">
+                    <span class="brand__mark" aria-hidden="true">
+                        <img class="brand__img" src="Material/Logo.png" alt="NexCare Pharmacy Logo">
+                    </span>
+                    <span class="brand__name">NexCare</span>
+                    <span class="brand__sub">Pharmacy</span>
+                </a>
+
+                <div class="search" role="search">
+                    <label class="sr-only" for="searchInput">Search products</label>
+                    <input id="searchInput" class="search__input" type="search" placeholder="Search medicines, supplements, personal care…" autocomplete="off" />
+                    <button id="searchClear" class="search__clear" type="button" aria-label="Clear search">✕</button>
+                    <div id="searchResults" class="search__results" aria-live="polite"></div>
+                </div>
+
+                <nav class="nav" aria-label="Primary">
+                    <div class="nav__group">
+                        <button class="nav__btn" id="categoriesBtn" type="button" aria-haspopup="menu" aria-expanded="false">
+                            Categories
+                            <span class="nav__chev" aria-hidden="true">▾</span>
+                        </button>
+                        <div class="nav__menu" id="categoriesMenu" role="menu" aria-label="Categories">
+                            <a role="menuitem" href="#/category/pom">Prescription Drugs (POM)</a>
+                            <a role="menuitem" href="#/category/otc">Over-the-Counter (OTC)</a>
+                            <a role="menuitem" href="#/category/supplements">Health Supplements</a>
+                            <a role="menuitem" href="#/category/devices">Medical Devices</a>
+                            <a role="menuitem" href="#/category/personal-care">Personal Care</a>
+                        </div>
+                    </div>
+
+                    <a class="nav__link" href="#/shop">Shop</a>
+                    <a class="nav__link" href="#/prescriptions">Prescriptions</a>
+                    <a class="nav__link" href="#/contact">Contact</a>
+                </nav>
+
+                <div class="actions">
+                    <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle theme">
+                        <span class="icon-btn__icon" aria-hidden="true">◐</span>
+                    </button>
+
+                    <button class="icon-btn" id="accountBtn" type="button" aria-label="Account" title="Account">
+                        <span class="icon-btn__icon" aria-hidden="true">👤</span>
+                        <span id="accountLabel" class="icon-btn__label">Sign in</span>
+                    </button>
+
+                    <a class="icon-btn icon-btn--cart" href="#/cart" aria-label="Cart" title="Cart">
+                        <span class="icon-btn__icon" aria-hidden="true">🛒</span>
+                        <span class="icon-btn__label">Cart</span>
+                        <span id="cartCount" class="badge" aria-label="0 items in cart">0</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <main id="main" class="main">
+            <div id="app" class="container" aria-live="polite"></div>
+        </main>
+
+        <footer class="footer">
+            <div class="container footer__inner">
+                <div class="footer__brand">
+                    <img class="footer__img" src="Material/Logo.png" alt="NexCare Pharmacy Logo">
+                    <div class="footer__logo">NexCare Pharmacy</div>
+                    <div class="footer__muted">Premium care, delivered.</div>
+                </div>
+                <div class="footer__cols">
+                    <div class="footer__col">
+                        <div class="footer__title">Shop</div>
+                        <a href="#/shop">All products</a>
+                        <a href="#/category/otc">OTC</a>
+                        <a href="#/category/supplements">Supplements</a>
+                    </div>
+                    <div class="footer__col">
+                        <div class="footer__title">Support</div>
+                        <a href="#/contact">Contact</a>
+                        <a href="#/prescriptions">Prescription upload</a>
+                    </div>
+                    <div class="footer__col">
+                        <div class="footer__title">Account</div>
+                        <a href="#/account">Profile</a>
+                        <a href="#/orders">Orders</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="container footer__bottom-inner">
+                    <span>© 2026 NexCare Pharmacy. All rights reserved.</span>
+                    <span class="footer__legal">This demo simulates e‑commerce. No real payments.</span>
+                </div>
+            </div>
+        </footer>
+
+        <div id="toastHost" class="toast-host" aria-live="polite" aria-atomic="true"></div>
+
+        <dialog id="accountDialog" class="dialog">
+            <form method="dialog" class="dialog__inner" id="accountDialogInner">
+                <button class="dialog__close" value="cancel" aria-label="Close">✕</button>
+                <div class="dialog__header">
+                    <div class="dialog__title" id="accountDialogTitle">Welcome back</div>
+                    <div class="dialog__subtitle" id="accountDialogSubtitle">Sign in to save your cart and wishlist.</div>
+                </div>
+
+                <div class="tabs" role="tablist" aria-label="Account">
+                    <button class="tabs__tab is-active" id="tabLogin" type="button" role="tab" aria-selected="true">Login</button>
+                    <button class="tabs__tab" id="tabSignup" type="button" role="tab" aria-selected="false">Sign up</button>
+                </div>
+
+                <div class="tabpanes">
+                    <section class="pane is-active" id="paneLogin" role="tabpanel" aria-labelledby="tabLogin">
+                        <div class="field">
+                            <label for="loginEmail">Email</label>
+                            <input id="loginEmail" type="email" placeholder="you@example.com" required />
+                        </div>
+                        <div class="field">
+                            <label for="loginPassword">Password</label>
+                            <input id="loginPassword" type="password" placeholder="••••••••" required minlength="6" />
+                        </div>
+                        <button class="btn btn--primary btn--full" id="loginSubmit" type="button">Login</button>
+                        <div class="hint">Demo: any email + password works.</div>
+                    </section>
+
+                    <section class="pane" id="paneSignup" role="tabpanel" aria-labelledby="tabSignup">
+                        <div class="field">
+                            <label for="signupName">Full name</label>
+                            <input id="signupName" type="text" placeholder="Your name" required />
+                        </div>
+                        <div class="field">
+                            <label for="signupEmail">Email</label>
+                            <input id="signupEmail" type="email" placeholder="you@example.com" required />
+                        </div>
+                        <div class="field">
+                            <label for="signupPassword">Password</label>
+                            <input id="signupPassword" type="password" placeholder="Create a password" required minlength="6" />
+                        </div>
+                        <button class="btn btn--primary btn--full" id="signupSubmit" type="button">Create account</button>
+                        <div class="hint">Demo: stored locally in your browser.</div>
+                    </section>
+                </div>
+            </form>
+        </dialog>
+
+        <script type="module" src="JS/Script.js"></script>
+    </body>
+</html>

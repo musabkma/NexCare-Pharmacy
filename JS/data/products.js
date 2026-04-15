@@ -1,0 +1,197 @@
+export const TAX_RATE = 0.15;
+
+export const CATEGORIES = [
+  { slug: "pom", name: "Prescription Drugs (POM)" },
+  { slug: "otc", name: "Over-the-Counter (OTC)" },
+  { slug: "supplements", name: "Health Supplements" },
+  { slug: "devices", name: "Medical Devices" },
+  { slug: "personal-care", name: "Personal Care" },
+];
+
+export function formatMoney(amount) {
+  const n = Number(amount || 0);
+  return new Intl.NumberFormat(undefined, { style: "currency", currency: "USD" }).format(n);
+}
+
+/** Local assets in /Material (paths relative to site root / Index.html) */
+function material(file) {
+  return `Material/${file}`;
+}
+
+export const PRODUCTS = [
+  {
+    id: "paracetamol-500",
+    name: "Paracetamol 500mg (20 tablets)",
+    price: 4.99,
+    category: "otc",
+    rating: 4.6,
+    reviews: 842,
+    tags: ["pain relief", "fever"],
+    image: material("Paracetamol.jpg"),
+    description:
+      "Fast, everyday relief for mild to moderate pain and fever. Gentle, reliable, and a staple for home care.",
+    isPrescriptionRequired: false,
+  },
+  {
+    id: "ibuprofen-200",
+    name: "Ibuprofen 200mg (24 tablets)",
+    price: 6.49,
+    category: "otc",
+    rating: 4.5,
+    reviews: 611,
+    tags: ["anti-inflammatory", "pain relief"],
+    image: material("Ibuprofen.jpg"),
+    description:
+      "Anti-inflammatory support for aches and pains. Take with food. Not suitable for everyone—read label carefully.",
+    isPrescriptionRequired: false,
+  },
+  {
+    id: "cetirizine-10",
+    name: "Cetirizine 10mg (30 tablets)",
+    price: 9.25,
+    category: "otc",
+    rating: 4.7,
+    reviews: 403,
+    tags: ["allergy", "antihistamine"],
+    image: material("Cetirizine.png"),
+    description: "Non-drowsy antihistamine support for seasonal allergies and hay fever symptoms.",
+    isPrescriptionRequired: false,
+  },
+  {
+    id: "vitamin-c-1000",
+    name: "Vitamin C 1000mg (60 tablets)",
+    price: 12.99,
+    category: "supplements",
+    rating: 4.4,
+    reviews: 1290,
+    tags: ["immunity", "antioxidant"],
+    image: material("VitaminC.png"),
+    description:
+      "Daily immune support with high-potency Vitamin C. A premium, clean formulation for everyday wellness.",
+    isPrescriptionRequired: false,
+  },
+  {
+    id: "omega-3",
+    name: "Omega‑3 Fish Oil (60 softgels)",
+    price: 18.5,
+    category: "supplements",
+    rating: 4.8,
+    reviews: 987,
+    tags: ["heart", "brain", "joint"],
+    image: material("Omega-3.png"),
+    description: "High-quality Omega‑3 for heart and brain health with a clean, easy-to-swallow softgel.",
+    isPrescriptionRequired: false,
+  },
+  {
+    id: "probiotic",
+    name: "Daily Probiotic (30 capsules)",
+    price: 21.0,
+    category: "supplements",
+    rating: 4.3,
+    reviews: 322,
+    tags: ["gut", "digestive"],
+    image: material("DailyProbiotic.png"),
+    description: "Gut-friendly support with a balanced multi-strain blend designed for daily comfort.",
+    isPrescriptionRequired: false,
+  },
+  {
+    id: "digital-thermometer",
+    name: "Digital Thermometer (Fast Read)",
+    price: 8.75,
+    category: "devices",
+    rating: 4.2,
+    reviews: 224,
+    tags: ["device", "home care"],
+    image: material("DigitalThermo.png"),
+    description: "Fast read digital thermometer with a clear display—essential for every home first-aid kit.",
+    isPrescriptionRequired: false,
+  },
+  {
+    id: "blood-pressure-monitor",
+    name: "Blood Pressure Monitor (Upper Arm)",
+    price: 49.99,
+    category: "devices",
+    rating: 4.6,
+    reviews: 451,
+    tags: ["device", "heart"],
+    image: material("BPM.png"),
+    description:
+      "Accurate upper-arm monitoring with a comfortable cuff. Track and review readings at home with confidence.",
+    isPrescriptionRequired: false,
+  },
+  {
+    id: "surgical-mask-50",
+    name: "Surgical Face Masks (50 pack)",
+    price: 10.5,
+    category: "devices",
+    rating: 4.5,
+    reviews: 1840,
+    tags: ["protection", "hygiene"],
+    image: material("FaceMasks.png"),
+    description: "Premium 3‑ply masks with comfortable ear loops and breathable filtration.",
+    isPrescriptionRequired: false,
+  },
+  {
+    id: "gentle-face-wash",
+    name: "Gentle Face Wash (200ml)",
+    price: 11.75,
+    category: "personal-care",
+    rating: 4.4,
+    reviews: 612,
+    tags: ["skincare"],
+    image: material("FaceWash.png"),
+    description: "Low-foam, fragrance-light cleanser for daily use. Leaves skin fresh and balanced.",
+    isPrescriptionRequired: false,
+  },
+  {
+    id: "hand-sanitizer",
+    name: "Hand Sanitizer (500ml)",
+    price: 7.2,
+    category: "personal-care",
+    rating: 4.6,
+    reviews: 508,
+    tags: ["hygiene"],
+    image: material("HandSanitizer.png"),
+    description: "Clean, quick-drying sanitizer with a soft finish—great for home or on-the-go.",
+    isPrescriptionRequired: false,
+  },
+  {
+    id: "moisturizing-lotion",
+    name: "Moisturizing Body Lotion (400ml)",
+    price: 14.25,
+    category: "personal-care",
+    rating: 4.7,
+    reviews: 389,
+    tags: ["skincare", "hydration"],
+    image: material("Lotion.png"),
+    description: "Rich hydration with a premium lightweight feel—absorbs quickly without residue.",
+    isPrescriptionRequired: false,
+  },
+  {
+    id: "amoxicillin-500",
+    name: "Amoxicillin 500mg (POM)",
+    price: 22.0,
+    category: "pom",
+    rating: 4.1,
+    reviews: 97,
+    tags: ["antibiotic"],
+    image: material("Amoxicillin.png"),
+    description:
+      "Prescription medicine (POM). This product is labeled as prescription-required in this demo catalog.",
+    isPrescriptionRequired: true,
+  },
+  {
+    id: "metformin-500",
+    name: "Metformin 500mg (POM)",
+    price: 19.5,
+    category: "pom",
+    rating: 4.3,
+    reviews: 140,
+    tags: ["diabetes"],
+    image: material("Metformin.png"),
+    description:
+      "Prescription medicine (POM). For demo use only. Always consult a licensed provider for prescriptions.",
+    isPrescriptionRequired: true,
+  },
+];
+
