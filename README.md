@@ -17,14 +17,6 @@ This is a **frontend-only** modern online pharmacy platform (SPA-style) built wi
 ### Run / Deploy
 Just open `Index.html` in a browser.
 
-For best results (module scripts), run a local static server:
-
-```bash
-python -m http.server 5173
-```
-
-Then open `http://localhost:5173/`.
-
 ### Notes
 - This demo does **not** process real payments or verify prescriptions.
 - Product images are generated SVG placeholders (no external assets required).
